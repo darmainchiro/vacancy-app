@@ -32,6 +32,7 @@
                             <div class="form-group">
                                 <label for="name_unit">Posisi</label>
                                 <input type="text" name="posisi" class="form-control" placeholder="Masukkan Posisi">
+                                <input type="hidden" class="form-control" name="status" value="open">
                             </div>
                             <div class="form-group">
                                 <label for="id_jenis_bayar">Persyaratan</label>
