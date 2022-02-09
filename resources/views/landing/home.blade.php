@@ -41,9 +41,12 @@
         <div class="container">
           <div class="row">
               <!-- Notifikasi menggunakan flash session data -->
-              <div class="alert alert-success alert-block">
-                Data Berhasil disimpan
+              @if (session('success'))
+              <div class="col-lg-12 alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                  {{ session('success') }}
               </div>
+              @endif
           </div>
           <!--/ Content row end -->
         </div>

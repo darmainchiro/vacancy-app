@@ -24,9 +24,10 @@
     </nav>
     <div class="container">
         <!-- Notifikasi menggunakan flash session data -->
-        @if (session('error'))
+        @if ($errors->any())
         <div class="alert alert-danger alert-block">
-            {{ session('error') }}
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            Data gagal disimpan
         </div>
         @endif
         <div class="panel panel-default">

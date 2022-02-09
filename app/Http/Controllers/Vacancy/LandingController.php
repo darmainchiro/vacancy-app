@@ -55,7 +55,7 @@ class LandingController extends Controller
                 Expwork::create($data);
             }
 
-            return view('/landing/home')->with(['success' => 'Data berhasil diinput']);
+            return redirect()->route('display')->with(['success' => 'Data berhasil diinput']);
             
         }else{
             return back()->withInput();

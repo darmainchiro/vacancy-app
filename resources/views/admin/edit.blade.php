@@ -38,6 +38,11 @@
                                 <textarea rows="9" type="text" name="persyaratan" class="form-control" placeholder="Masukkan Persyaratan">{{ $model->persyaratan }}</textarea>
                             </div>
                             <div class="form-group">
+                                <label for="id_jenis_bayar">Lokasi</label>
+                                <textarea rows="2" type="text" name="lokasi" class="form-control" placeholder="Masukkan Lokasi Penempatan">{{ $model->lokasi }}</textarea>
+                                <small class="form-text text-muted">Jika lokasi lebih dari 1 pisahkan menggunakan tanda koma(,). Contoh : Jakarta,Bandung,Tangerang</small>
+                            </div>
+                            <div class="form-group">
                                 <label for="kelas">Batas Akhir</label>
                                 <div class="input-group">
                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
