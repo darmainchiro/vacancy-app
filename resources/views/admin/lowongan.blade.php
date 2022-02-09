@@ -38,6 +38,7 @@
                                     <th><div style="text-align:center">NO</div></th>
                                     <th><div style="text-align:center">POSISI</div></th>
                                     <th><div style="text-align:center">DESKRIPSI</div></th>
+                                    <th><div style="text-align:center">LOKASI</div></th>
                                     <th><div style="text-align:center">BATAS AKHIR</div></th>
                                     <th><div style="text-align:center">STATUS</div></th>                                
                                     <th><div style="text-align:center">ACTION</div></th>
@@ -49,6 +50,7 @@
                                         <td style="text-align:center">{{ ++$index }}</td>
                                         <td>{{ $post->posisi }}</td>
                                         <td>{{ $post->persyaratan }}</td>
+                                        <td style="text-align:center">{{ $post->lokasi }}</td>
                                         <td style="text-align:center">{{ $post->batas_akhir }}</td>
                                         <td style="text-align:center">{{ $post->status }}</td>
                                         <td>

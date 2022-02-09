@@ -23,6 +23,12 @@
     </div>
     </nav>
     <div class="container">
+        <!-- Notifikasi menggunakan flash session data -->
+        @if (session('error'))
+        <div class="alert alert-danger alert-block">
+            {{ session('error') }}
+        </div>
+        @endif
         <div class="panel panel-default">
             <div class="panel-heading">
                 Form Lowongan
@@ -35,7 +41,6 @@
                         <hr>
                         </div>
                         <div class="col-lg-6">
-                    
                             <div class="form-group">
                                 <label class="control-label col-sm-4" for="nama_mhs">Nama Lengkap :</label>
                                 <div class="col-sm-8">
@@ -53,9 +58,8 @@
                                 <label class="control-label col-sm-4" for="tgl_mhs">Tanggal Lahir :</label>
                                 <div class="col-sm-8">
                                     <div class ="input-group date"id='datetimepicker'>
-                                    <!-- <input type="text" class="form-control" name="tgl_lhr" required> -->
                                         <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                        <input class="form-control" autocomplete="off" name="batas_akhir">
+                                        <input class="form-control" autocomplete="off" name="tgl_lhr">
                                     </div>
                                 </div>
                             </div>
@@ -193,17 +197,19 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-sm-4" for="captcha">Captcha</label>
-                                    <div class="col-sm-8" id="captcha">
-                                        {!! NoCaptcha::renderJs() !!}
-                                        {!! NoCaptcha::display() !!}
-                                        <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+                                    <label class="control-label col-sm-4" for="agama_mhs">Lokasi Penempatan :</label>
+                                    <div class="col-sm-8">
+                                        <select id="lokasi" name="lokasi" class="form-control select2" style="width: 100%;">
+                                        @foreach($lokasi as $lks)
+                                            <option value="{{ $lks }}">{{ $lks }}</option>
+                                        @endforeach
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6" style="margin-top:40px">
                                 <div class="form-group">
-                                    <div class="box-footer" style="margin-top: 50px">
+                                    <div class="box-footer">
                                         <div class="col-sm-8" style="text-align:center">
                                             <input type="submit" class="btn btn-primary" value="Register Data">
                                             <a href="{{ route('career') }}" class="btn btn-danger">Batal</a>

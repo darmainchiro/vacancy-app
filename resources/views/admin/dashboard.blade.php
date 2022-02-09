@@ -54,6 +54,24 @@
 							</div>
 						</div>
                         <canvas id="barChart"></canvas>
+						<div class="col-lg-6" style="margin-top:30px">
+                            <table  id="bootstrap-data-table" class="table table-striped table-bordered">
+                                <tr>
+                                    <th style="text-align:center">Posisi</th>
+                                    <th style="text-align:center">Jumlah</th>
+                                </tr>
+								@forelse ($lowongan as $key => $value)
+									<tr>
+										<td>{!! $key !!}</td>
+										<td style="text-align:center">{!! $value !!}</td>										
+									</tr>
+									@empty
+									<tr>
+										<td class="text-center text-mute" colspan="4">Pelamar belum ada</td>
+									</tr>
+								@endforelse 
+                            </table>  
+                        </div>
                     </div>
                 </div>
             </div><!-- /# column -->

@@ -40,7 +40,10 @@
     <div id="top-bar" class="top-bar">
         <div class="container">
           <div class="row">
-		   
+              <!-- Notifikasi menggunakan flash session data -->
+              <div class="alert alert-success alert-block">
+                Data Berhasil disimpan
+              </div>
           </div>
           <!--/ Content row end -->
         </div>

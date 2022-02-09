@@ -31,14 +31,14 @@ class LandingController extends Controller
 
     public function apply($id){
         $model = Lowongan::where("id",$id)->first();
-        return view('landing/formku', compact('model'));
+        $lokasi = explode(',', $model->lokasi);
+        return view('landing/formku', compact('model','lokasi'));
     }
 
     public function postApply(Request $request){
         $request->validate([
             'cv' => 'required',
-            'cv.*' => 'mimes:doc,docx,PDF,pdf,jpg,jpeg,png|max:2000',
-            'g-recaptcha-response' => 'required|captcha'
+            'cv.*' => 'mimes:doc,docx,PDF,pdf,jpg,jpeg,png|max:2000'
         ]);
         if ($request->hasfile('cv')) {            
             $filename = round(microtime(true) * 1000).'-'.str_replace(' ','-',$request->file('cv')->getClientOriginalName());
@@ -55,10 +55,10 @@ class LandingController extends Controller
                 Expwork::create($data);
             }
 
-            return redirect()->back()->with('sukses', 'Data berhasil diinput');
+            return view('/landing/home')->with(['success' => 'Data berhasil diinput']);
             
         }else{
-            return redirect()->back()->with('gagal', 'Data gagal diinput');
+            return back()->withInput();
         }
     }
 

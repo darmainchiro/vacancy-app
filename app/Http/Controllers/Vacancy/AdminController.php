@@ -4,9 +4,13 @@ namespace App\Http\Controllers\Vacancy;
 use App\Models\Lowongan;
 use App\Models\Applier;
 use App\Models\Chart;
+use App\Exports\ApplierExport;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class AdminController extends Controller
 {
@@ -28,12 +32,13 @@ class AdminController extends Controller
             $colours[] = '#' . substr(str_shuffle('ABCDEF0123456789'), 0, 6);
         }
 
+        $upper_key = array_map('strtoupper',array_keys($lowongan));
         $chart = new Chart;
-        $chart->labels = (array_keys($lowongan));
+        $chart->labels = ($upper_key);
         $chart->dataset = (array_values($lowongan));
         $chart->colours = $colours;
 
-        return view('admin/dashboard',compact('chart','selbulan','seltahun'));
+        return view('admin/dashboard',compact('chart','lowongan','selbulan','seltahun'));
         // return view('admin/dashboard');
     }
 
@@ -80,4 +85,25 @@ class AdminController extends Controller
         $applier = Applier::all();
         return view('admin/report',['applier' => $applier]);
     }
+
+    public function reportxls(){
+        $lokasi = Applier::select('lokasi')->distinct()->orderBy('lokasi','DESC')->get();
+        $tahun = Applier::select(DB::raw('EXTRACT(YEAR FROM CREATED_AT) AS year'))->distinct()->orderBy('year','DESC')->get();
+
+        return view('admin/reportxls',compact('lokasi','tahun'));
+    }
+
+    public function export_excel()
+	{
+        if (isset($_GET['lokasi'])&&isset($_GET['tahun'])) {
+            $sellokasi = $_GET['lokasi'];
+            $seltahun = $_GET['tahun'];
+            
+        } else {
+            $sellokasi = '';
+            $seltahun = '';
+        }
+
+		return Excel::download(new ApplierExport($seltahun, $sellokasi), 'laporan.xlsx');
+	}
 }

@@ -17,8 +17,9 @@ class CreateLowongan extends Migration
             $table->id();
             $table->string('posisi');
             $table->string('persyaratan');
+            $table->string('lokasi');
             $table->string('batas_akhir');
-            $table->string('status');            
+            $table->string('status');         
             $table->timestamps();
         });
     }

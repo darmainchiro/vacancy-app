@@ -8,6 +8,6 @@ class Lowongan extends Model
 {
     protected $table = 'lowongan';
     protected $fillable = [
-        'id', 'posisi','persyaratan','batas_akhir','status',
+        'id', 'posisi','persyaratan','batas_akhir','status','lokasi'
     ];
 }

@@ -31,6 +31,7 @@ class CreateApplier extends Migration
             $table->string('jurusan');
             $table->string('thn_ijazah');
             $table->string('cv');
+            $table->string('lokasi');
             $table->timestamps();
         });
     }

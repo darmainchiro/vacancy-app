@@ -57,7 +57,7 @@
           <div class="row align-items-center">
             <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
                 <a class="d-block" href="index.html">
-                  <img loading="lazy" src="images/logo.jpg" alt="Constra">
+                  <img loading="lazy" src="{{ asset('landing/images/logo.jpg') }}" alt="Constra">
                 </a>
             </div><!-- logo end -->
   
@@ -130,7 +130,7 @@
   <!--/ Navigation end -->
 </header>
 <!--/ Header end -->
-<div id="banner-area" class="banner-area" style="background-image:url(images/banner/banner1.jpg)">
+<div id="banner-area" class="banner-area" style="background-image:url({{ asset('landing/images/banner/banner1.jpg') }})">
   <div class="banner-text">
     <div class="container">
         <div class="row">
@@ -164,8 +164,8 @@
 
           <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
             <div class="project-img-container">
-              <a class="gallery-popup" href="images/projects/Proj1.png">
-                <img class="img-fluid" src="images/projects/Proj1.png" alt="project-image">
+              <a class="gallery-popup" href="{{ asset('landing/images/projects/Proj1.png') }}">
+                <img class="img-fluid" src="{{ asset('landing/images/projects/Proj1.png') }}" alt="project-image">
                 <span class="gallery-icon"><i class="fa fa-plus"></i></span>
               </a>
               <div class="project-item-info">
@@ -181,8 +181,8 @@
 
           <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;healthcare&quot;]">
             <div class="project-img-container">
-              <a class="gallery-popup" href="images/projects/proj2.png">
-                <img class="img-fluid" src="images/projects/proj2.png" alt="project-image">
+              <a class="gallery-popup" href="{{ asset('landing/images/projects/proj2.png') }}">
+                <img class="img-fluid" src="{{ asset('landing/images/projects/proj2.png') }}" alt="project-image">
                 <span class="gallery-icon"><i class="fa fa-plus"></i></span>
               </a>
               <div class="project-item-info">
@@ -198,8 +198,8 @@
 
           <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;infrastructure&quot;,&quot;commercial&quot;]">
             <div class="project-img-container">
-              <a class="gallery-popup" href="images/projects/proj3.png">
-                <img class="img-fluid" src="images/projects/proj3.png" alt="project-image">
+              <a class="gallery-popup" href="{{ asset('landing/images/projects/proj3.png') }}">
+                <img class="img-fluid" src="{{ asset('landing/images/projects/proj3.png') }}" alt="project-image">
                 <span class="gallery-icon"><i class="fa fa-plus"></i></span>
               </a>
               <div class="project-item-info">
@@ -215,8 +215,8 @@
 
           <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;education&quot;,&quot;infrastructure&quot;]">
             <div class="project-img-container">
-              <a class="gallery-popup" href="images/projects/proj4.png">
-                <img class="img-fluid" src="images/projects/proj4.png" alt="project-image">
+              <a class="gallery-popup" href="{{ asset('landing/images/projects/proj4.png') }}">
+                <img class="img-fluid" src="{{ asset('landing/images/projects/proj4.png') }}" alt="project-image">
                 <span class="gallery-icon"><i class="fa fa-plus"></i></span>
               </a>
               <div class="project-item-info">
@@ -232,8 +232,8 @@
 
           <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;infrastructure&quot;,&quot;education&quot;]">
             <div class="project-img-container">
-              <a class="gallery-popup" href="images/projects/Proj8.png">
-                <img class="img-fluid" src="images/projects/Proj8.png" alt="project-image">
+              <a class="gallery-popup" href="{{ asset('landing/images/projects/Proj8.png') }}">
+                <img class="img-fluid" src="{{ asset('landing/images/projects/Proj8.png') }}" alt="project-image">
                 <span class="gallery-icon"><i class="fa fa-plus"></i></span>
               </a>
               <div class="project-item-info">
@@ -249,8 +249,8 @@
 
           <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;residential&quot;]">
             <div class="project-img-container">
-              <a class="gallery-popup" href="images/projects/proj6.png">
-                <img class="img-fluid" src="images/projects/proj6.png" alt="project-image">
+              <a class="gallery-popup" href="{{ asset('landing/images/projects/proj6.png') }}">
+                <img class="img-fluid" src="{{ asset('landing/images/projects/proj6.png') }}" alt="project-image">
                 <span class="gallery-icon"><i class="fa fa-plus"></i></span>
               </a>
               <div class="project-item-info">

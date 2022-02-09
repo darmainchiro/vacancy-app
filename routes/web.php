@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 Route::get('/home', 'App\Http\Controllers\Vacancy\LandingController@getLanding')->name('display');
 Route::get('/home/contact', 'App\Http\Controllers\Vacancy\LandingController@contact')->name('contact');
@@ -35,7 +35,8 @@ Route::get('/admin/lowongan/{id}/delete', 'App\Http\Controllers\Vacancy\AdminCon
 Route::get('/admin/koko', 'App\Http\Controllers\Vacancy\AdminController@koko')->middleware('auth')->name('koko');
 
 Route::get('/admin/report', 'App\Http\Controllers\Vacancy\AdminController@report')->middleware('auth')->name('report');
-
+Route::get('/admin/reportxls', 'App\Http\Controllers\Vacancy\AdminController@reportxls')->middleware('auth')->name('report-xls');
+Route::get('/admin/export_excel', 'App\Http\Controllers\Vacancy\AdminController@export_excel')->middleware('auth')->name('export-xls');
 
 Auth::routes();
 

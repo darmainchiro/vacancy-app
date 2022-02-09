@@ -56,7 +56,7 @@
           <div class="row align-items-center">
             <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
                 <a class="d-block" href="index.html">
-                  <img loading="lazy" src="images/logo.jpg" alt="Constra">
+                  <img loading="lazy" src="{{ asset('landing/images/logo.jpg') }}" alt="Constra">
                 </a>
             </div><!-- logo end -->
   
@@ -78,22 +78,9 @@
                       </div>
                     </div>
                   </li>
-                  <li class="last">
-                    <div class="info-box last">
-					<!--
-                      <div class="info-box-content">
-                          <p class="info-box-title">Global Certificate</p>
-                          <p class="info-box-subtitle">ISO 9001:2017</p>
-                      </div>-->
-                    </div>
-                  </li>
-				  <!--
-                  <li class="header-get-a-quote">
-                    <a class="btn btn-primary" href="contact.html">Get A Quote</a>
-                  </li>-->
                 </ul><!-- Ul end -->
             </div><!-- header right end --
-          </div><!-- logo area end -->
+          </div> logo area end -->
   
       </div><!-- Row end -->
     </div><!-- Container end -->
@@ -140,7 +127,7 @@
   <!--/ Navigation end -->
 </header>
 <!--/ Header end -->
-<div id="banner-area" class="banner-area" style="background-image:url(images/banner/banner1.jpg)">
+<div id="banner-area" class="banner-area" style="background-image:url({{ asset('landing/images/banner/banner1.jpg') }})">
   <div class="banner-text">
     <div class="container">
         <div class="row">
@@ -182,6 +169,7 @@
                                     <th><div style="text-align:center">NO</div></th>
                                     <th><div style="text-align:center">POSISI</div></th>
                                     <th><div style="text-align:center">PERSYARATAN</div></th>
+                                    <th><div style="text-align:center">LOKASI PENEMPATAN</div></th>
                                     <th><div style="text-align:center">BATAS AKHIR</div></th>
                                     <th><div style="text-align:center">ACTION</div></th>
                                 </tr>
@@ -192,6 +180,7 @@
                                         <td style="text-align:center">{{ ++$index }}</td>
                                         <td>{{ $post->posisi }}</td>
                                         <td>{{ $post->persyaratan }}</td>
+                                        <td style="text-align:center">{{ $post->lokasi }}</td>
                                         <td style="text-align:center">{{ $post->batas_akhir }}</td>
                                         <td>
                                             <div style="text-align:center">
